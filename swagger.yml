@@ -81,4 +81,14 @@ paths:
           application/json:
             schema:
               x-body-name: "person"
-              $ref: "#/components/Person"
+              $ref: "#/components/schemas/Person"
+    delete:
+      tags:
+        - People
+      operationId: "people.delete"
+      summary: "Delete a person"
+      parameters:
+        - $ref: "#/components/parameters/lname"
+      responses:
+        "204":
+          description: "Successfully deleted person"
